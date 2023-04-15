@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
@@ -43,6 +44,7 @@ public class Aluno implements Serializable{
 	private LocalDate dataNascimento;
 	
 	@OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<AvaliacaoFisica> avaliacoes = new ArrayList<>();
 
 }
