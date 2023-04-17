@@ -2,6 +2,8 @@ package com.adhocsolucoes.academia.entities.forms;
 
 import java.time.LocalDate;
 
+import org.hibernate.validator.constraints.br.CPF;
+
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
@@ -20,7 +22,7 @@ public class AlunoForm {
 	private String nome;
 
 	@NotEmpty(message = "Preencha o campo corretamente.")
-	// @CPF(message = "'${validatedValue}' é inválido!")
+	@CPF(message = "'${validatedValue}' é inválido!")
 	private String cpf;
 
 	@NotEmpty(message = "Preencha o campo corretamente.")
